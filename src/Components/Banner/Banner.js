@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../../axios'
-import { API_KEY, imgUrl} from '../../constants/constants'
+import {imgUrl} from '../../constants/constants'
+import { trending } from '../../urls'
 import classes from './Banner.module.css'
 
 function Banner() {
@@ -13,9 +14,8 @@ function Banner() {
 	};
 	useEffect(() => {
 		// calling our axiosInstance and passing rest url with imported API_KEY
-		axiosInstance.get(`trending/all/week?api_key=${API_KEY}&language=en-US`)
+		axiosInstance.get(trending)
 		.then(response => {
-			console.log(response.data.results.length)
 			// calling the function random and store random number in the variable
 			const randomNum = random(response.data.results.length-1);
 			setMovie(response.data.results[randomNum])

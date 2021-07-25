@@ -8,6 +8,10 @@
 	padding-top: 140px;
 	height: 190px;
 	padding-left: 15px;
+	text-shadow: -1px 1px 0 #000, 
+		1px 1px 0 #000, 
+		1px -1px 0 #000, 
+		-1px -1px 0 #000;
 }
 .title{
 	font-size: 3rem;

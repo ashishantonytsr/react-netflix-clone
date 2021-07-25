@@ -25,6 +25,7 @@
 	max-height: 250px;
 	margin-right: 10px;
 	border-radius: 6px;
+	cursor: pointer;
 }
 .poster:hover{
 	transform: scale(1.1);
@@ -34,7 +35,13 @@
 	max-height: 150px;
 	margin-right: 10px;
 	border-radius: 6px;
+	cursor: pointer;
 }
 .smallPoster:hover{
 	transform: scale(1.1);
+}
+
+.youtubeTrailer{
+	width: 100%;
+	height: auto;
 }
