@@ -1,4 +1,5 @@
 .row{
+	margin-top: 20px;
 	margin-left: 20px;
 	color: #fff;
 }
@@ -7,10 +8,18 @@
 	padding: 20px;
 	overflow-y: hidden;
 	overflow-x: scroll;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
 }
+
 .posters::-webkit-scrollbar{
-	display: none;
+	display: none; 
+	/* Chrome, Safari & Opera */
 }
+.posters {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+} 
 
 .poster{
 	max-height: 250px;
