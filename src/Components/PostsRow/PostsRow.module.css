@@ -30,10 +30,11 @@
 .poster:hover{
 	transform: scale(1.1);
 }
-.details{
+.detailsContainer{
 	display: block;
-	width: 60%;
+	width: 65%;
 	height: auto;
+	min-height: 230px;
 	margin: auto;
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -42,6 +43,22 @@
 	border-radius: 6px;
 	background: rgb(28,28,37);
 	background: linear-gradient(90deg, rgba(28,28,37,1) 0%, rgba(27,27,34,0.8897758932674632) 50%, rgba(28,28,37,1) 100%); 
+}
+.detailsImage{
+	float: left;
+	left: 10px;
+	max-height: 250px;
+	width: 200px;
+	margin: 10px 8px;
+}
+.detailsImage img{
+	left: 5px;
+	width: 150px;
+	height: 200px;
+	border-radius: 5px;
+}
+.details{
+	right: 5px;
 }
 .detailsTitle{
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

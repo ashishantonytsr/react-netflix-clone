@@ -23,10 +23,16 @@ function PostRow(props) {
 		let overview = movie.overview
 		let popularity = movie.popularity
 		if (popularity === undefined) popularity = "Not available"
+		let posterImage = movie.poster_path
+		if (posterImage === undefined) posterImage = "https://shenandoahcountyva.us/bos/wp-content/uploads/sites/4/2018/01/picture-not-available-clipart-12.jpg"
 		if (title === undefined) title = movie.name
 		if (title === undefined) title = movie.original_name
 		if (title === undefined) title = movie.original_title
-		setMovieDetail({title: title, overview: overview, popularity: popularity})
+		setMovieDetail(
+			{title: title,
+			 overview: overview,
+			 popularity: popularity, 
+			 posterImage: posterImage})
 		return null
 	}	
 
@@ -51,12 +57,17 @@ function PostRow(props) {
 				)}
 			</div>
 			{MovieDetail && 
-			<div className={classes.details} >
-				<h3 className={classes.detailsTitle}> {MovieDetail.title} </h3>
-				<p className={classes.detailsContent}> {MovieDetail.overview} </p>
-				<span>Popularity: {MovieDetail.popularity}</span> <br />
-				<button className={classes.detailsCloseButton} 
-					onClick={ ()=>setMovieDetail(null) } >Close</button>
+			<div className={classes.detailsContainer} >
+				<div className={classes.detailsImage} >
+					<img src={`${imgUrl+MovieDetail.posterImage}`} alt="NO Poster Available" />
+				</div>
+				<div className={classes.details}>
+					<h3 className={classes.detailsTitle}> {MovieDetail.title} </h3>
+					<p className={classes.detailsContent}> {MovieDetail.overview} </p>
+					<span>Popularity: {MovieDetail.popularity}</span> <br />
+					<button className={classes.detailsCloseButton} 
+						onClick={ ()=>setMovieDetail(null) } >Close</button>
+				</div>
 			</div>
 			}
 		</div>
