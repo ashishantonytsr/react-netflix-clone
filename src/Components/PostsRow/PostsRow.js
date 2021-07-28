@@ -5,6 +5,7 @@ import classes from './PostsRow.module.css'
 
 function PostRow(props) {
 	const [Movies, setMovies] = useState([])
+	const [MovieDetail, setMovieDetail] = useState(null)
 
 	useEffect(() => {
 		axiosInstance.get(props.url)
@@ -17,6 +18,18 @@ function PostRow(props) {
 		} )
 	}, [props.url])
 
+	const showPostDetails = (movie)=>{
+		let title = movie.title
+		let overview = movie.overview
+		let popularity = movie.popularity
+		if (popularity === undefined) popularity = "Not available"
+		if (title === undefined) title = movie.name
+		if (title === undefined) title = movie.original_name
+		if (title === undefined) title = movie.original_title
+		setMovieDetail({title: title, overview: overview, popularity: popularity})
+		return null
+	}	
+
 	return (
 		<div className={classes.row} >
 			<h2>{props.title}</h2>
@@ -25,10 +38,22 @@ function PostRow(props) {
 						movie.poster_path ? 
 							<img className={props.isSmall ? classes.smallPoster : classes.poster} 
 							src={`${imgUrl+movie.backdrop_path}`} 
+							// if we pass the values on calling function, it will be rendered every elements
+							// to avoid this we call the function inside an anonymous function and initialize it
+							onClick={ ()=> showPostDetails(movie) }
 							alt="Images" />
 						: ''
 				)}
 			</div>
+			{MovieDetail && 
+			<div className={classes.details} >
+				<h3 className={classes.detailsTitle}> {MovieDetail.title} </h3>
+				<p className={classes.detailsContent}> {MovieDetail.overview} </p>
+				<span>Popularity: {MovieDetail.popularity}</span> <br />
+				<button className={classes.detailsCloseButton} 
+					onClick={ ()=>setMovieDetail(null) } >Close</button>
+			</div>
+			}
 		</div>
 	)
 }
