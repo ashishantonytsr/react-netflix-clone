@@ -26,7 +26,7 @@ function Banner() {
 		style={{ backgroundImage: `url( ${Movie ? imgUrl+Movie.backdrop_path : '' }` }}
 		className={classes.banner}>
 			 <div className={classes.content}>
-				 <h1 className={classes.title}> {Movie ? Movie.title : ''} </h1>
+				 <h1 className={classes.title}> {Movie ? Movie.title ? Movie.title : Movie.name : ''} </h1>
 				 <div className={classes.bannerButtons}>
 					 <button className={classes.button} >Play</button>
 					 <button className={classes.button} >My List</button>

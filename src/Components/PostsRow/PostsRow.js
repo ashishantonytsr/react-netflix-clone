@@ -24,6 +24,7 @@ function PostRow(props) {
 		let popularity = movie.popularity
 		if (popularity === undefined) popularity = "Not available"
 		let posterImage = movie.poster_path
+		if (posterImage === undefined || posterImage === null) posterImage = movie.backdrop_path
 		if (posterImage === undefined) posterImage = "https://shenandoahcountyva.us/bos/wp-content/uploads/sites/4/2018/01/picture-not-available-clipart-12.jpg"
 		if (title === undefined) title = movie.name
 		if (title === undefined) title = movie.original_name
@@ -41,19 +42,14 @@ function PostRow(props) {
 			<h2>{props.title}</h2>
 			<div className={classes.posters}>
 				{Movies.map(movie=>
-						movie.backdrop_path ? 
+						movie ? 
 							<img className={props.isSmall ? classes.smallPoster : classes.poster} 
-							src={`${imgUrl+movie.backdrop_path}`} 
+							src={`${movie.backdrop_path ? imgUrl+movie.backdrop_path : imgUrl+movie.poster_path }`} 
 							// if we pass the values on calling function, it will be rendered every elements
 							// to avoid this we call the function inside an anonymous function and initialize it
 							onClick={ ()=> showPostDetails(movie) }
 							alt={movie.original_title} />
-						: 
-							<img 
-							src="https://shenandoahcountyva.us/bos/wp-content/uploads/sites/4/2018/01/picture-not-available-clipart-12.jpg" 
-							className={props.isSmall ? classes.smallPoster : classes.poster}
-							onClick={ ()=> showPostDetails(movie) }
-							alt="Img Not Available" />
+						: ''
 				)}
 			</div>
 			{MovieDetail && 
