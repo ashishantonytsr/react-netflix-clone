@@ -9,7 +9,7 @@
 }
 .content{
 	padding-top: 140px;
-	height: 190px;
+	height: auto;
 	padding-left: 15px;
 	text-shadow: -1px 1px 0 #000, 
 		1px 1px 0 #000, 
@@ -53,6 +53,15 @@
 	height: auto;
 }
 
+@media screen and (max-width: 768px) {
+	.description{
+		min-width: 60%;
+		min-height: 180px;
+		/* position: flex; */
+		bottom: 10px;
+		overflow-y: visible;
+	}
+}
 
 
 

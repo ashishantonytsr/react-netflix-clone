@@ -100,7 +100,7 @@
 }
 
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768x) {
 	.posters{
 		margin: 15px 0px;
 		padding: 0;
@@ -111,5 +111,8 @@
 	}
 	.detailsContainer{
 		width: 90%;
+	}
+	.detailsImage{
+		float: none;
 	}
 }
