@@ -115,4 +115,12 @@
 	.detailsImage{
 		float: none;
 	}
+	.detailsCloseButton{
+		font-weight: 900;
+		background: rgb(212,18,18);
+		background: linear-gradient(90deg, rgba(212,18,18,1) 0%, rgba(209,100,100,1) 50%, rgba(184,32,32,1) 100%);  	
+	}
+	.detailsCloseButton:hover{
+		transform: none;
+	}	
 }
