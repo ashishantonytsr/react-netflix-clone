@@ -1,6 +1,9 @@
 .banner{
 	background-size: cover;
-	height: 500px;
+	background-repeat: no-repeat;
+	background-position: top;
+	width: 100%;
+	height: auto;
 	color: white;
 	bottom: auto;
 }

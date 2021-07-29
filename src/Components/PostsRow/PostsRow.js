@@ -51,7 +51,7 @@ function PostRow(props) {
 							alt={movie.original_title} />
 						: ''
 				)}
-			</div>
+			</div>		
 			{MovieDetail && 
 			<div className={classes.detailsContainer} >
 				<div className={classes.detailsImage} >
@@ -60,7 +60,7 @@ function PostRow(props) {
 				<div className={classes.details}>
 					<h3 className={classes.detailsTitle}> {MovieDetail.title} </h3>
 					<p className={classes.detailsContent}> {MovieDetail.overview} </p>
-					<span>Popularity: {MovieDetail.popularity}</span> <br />
+					<p>Popularity: {MovieDetail.popularity}</p> <br />
 					<button className={classes.detailsCloseButton} 
 						onClick={ ()=>setMovieDetail(null) } >Close</button>
 				</div>

@@ -25,21 +25,31 @@
 	margin-right: 10px;
 	border-radius: 6px;
 	cursor: pointer;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .poster:hover{
-	transform: scale(1.1);
+	transform: scale(1.05);
 }
+.smallPoster{
+	max-height: 150px;
+	margin-right: 10px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+.smallPoster:hover{
+	transform: scale(1.05);
+}
+
 .detailsContainer{
 	display: block;
 	width: 65%;
 	height: auto;
 	min-height: 230px;
-	margin: auto;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	padding: 10px 10px;
+	margin: 10px auto 15px auto;
+	padding: 10px;
 	text-align: center;
 	border-radius: 6px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	background: rgb(28,28,37);
 	background: linear-gradient(90deg, rgba(28,28,37,1) 0%, rgba(27,27,34,0.8897758932674632) 50%, rgba(28,28,37,1) 100%); 
 }
@@ -48,11 +58,11 @@
 	left: 10px;
 	max-height: 250px;
 	width: 200px;
-	margin: 10px 8px;
+	margin: 10px auto 10px auto;
 }
 .detailsImage img{
 	left: 5px;
-	width: 150px;
+	width: 95%;
 	height: 200px;
 	border-radius: 5px;
 }
@@ -89,12 +99,17 @@
 	background-color: #e6e6e6;
 }
 
-.smallPoster{
-	max-height: 150px;
-	margin-right: 10px;
-	border-radius: 6px;
-	cursor: pointer;
-}
-.smallPoster:hover{
-	transform: scale(1.1);
+
+@media screen and (max-width: 720px) {
+	.posters{
+		margin: 15px 0px;
+		padding: 0;
+	}
+	.poster:hover{
+		transform: none;
+		border-radius: 6px;
+	}
+	.detailsContainer{
+		width: 90%;
+	}
 }
